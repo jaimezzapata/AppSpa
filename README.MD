@@ -154,7 +154,7 @@ INSERT INTO Appointments (fecha, hora, userId, serviceId) VALUES
    - Configura la base de datos en el archivo de conexión (`server.js`).
    - Inicia el servidor:
      ```bash
-     npm start
+     npm run dev
      ```
 
 3. **Configura el frontend**:
@@ -168,7 +168,7 @@ INSERT INTO Appointments (fecha, hora, userId, serviceId) VALUES
      ```
    - Inicia el servidor de desarrollo:
      ```bash
-     npm start
+     npm run dev
      ```
 
 4. **Accede a la aplicación**:
