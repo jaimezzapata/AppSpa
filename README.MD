@@ -97,42 +97,20 @@ La estructura de carpetas está diseñada para seguir el modelo MVC (Modelo-Vist
 Aquí tienes el script SQL para crear las tablas necesarias, junto con datos de prueba para cada tabla.
 
 ```sql
-CREATE TABLE Users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50),
-    apellido VARCHAR(50),
-    email VARCHAR(100) UNIQUE,
-    role ENUM('admin', 'user') DEFAULT 'user'
-);
+CREATE DATABASE `spa`;
+USE `spa`;
 
-CREATE TABLE Services (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100)
-);
-
-CREATE TABLE Appointments (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATE,
-    hora TIME,
-    userId INT,
-    serviceId INT,
-    FOREIGN KEY (userId) REFERENCES Users(id),
-    FOREIGN KEY (serviceId) REFERENCES Services(id)
-);
 
 -- Datos de prueba
-INSERT INTO Users (nombre, apellido, email, role) VALUES 
-('Juan', 'Pérez', 'juan@example.com', 'admin'),
-('Maria', 'Gómez', 'maria@example.com', 'user');
+INSERT INTO `user` (`id`, `nombre`, `apellido`, `email`, `contraseña`, `role`, `direccion`, `documentoIdentidad`, `telefono`, `createdAt`, `updatedAt`) VALUES
+(1, 'Jaime', 'Zapata', 'zapataval2304@gmail.com', 'Contraseña', 'cliente', 'Calle Falsa', '10101010', '21341234', '2024-11-04 23:48:41', '2024-11-04 23:48:41');
 
-INSERT INTO Services (nombre) VALUES 
-('Masaje Relajante'),
-('Masaje Terapéutico'),
-('Masaje Deportivo');
+INSERT INTO `service` (`id`, `nombre`, `descripcion`, `duracion`, `precio`, `createdAt`, `updatedAt`) VALUES
+(1, 'Masaje Terapeutico', 'Masaje General', 2, 20000, '2024-11-04 23:51:50', '2024-11-04 23:51:50');
 
-INSERT INTO Appointments (fecha, hora, userId, serviceId) VALUES 
-('2024-11-05', '10:00:00', 2, 1),
-('2024-11-06', '15:30:00', 2, 2);
+INSERT INTO `appointment` (`id`, `fecha`, `hora`, `userId`, `serviceId`, `estado`, `createdAt`, `updatedAt`) VALUES
+(1, '2024-11-12', '17:57:00', 1, 1, 'pendiente', '2024-11-04 22:52:29', '2024-11-04 22:52:29'),
+(2, '2024-11-07', '17:59:00', 1, 1, 'pendiente', '2024-11-04 22:53:20', '2024-11-04 22:53:20');
 ```
 
 ## Instrucciones para Ejecutar el Proyecto

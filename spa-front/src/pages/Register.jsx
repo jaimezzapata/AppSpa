@@ -45,7 +45,7 @@ const Register = () => {
 
         const data = await response.json();
         console.log('Inicio de sesión exitoso:', data);
-        redireccion(auth)
+        auth('/')
       } else {
         errorRedireccion()
         const errorData = await response.json();
