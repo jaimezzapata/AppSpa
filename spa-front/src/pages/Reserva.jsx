@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { urlApi } from '../api/apiService';
 
 import './Reserva.css';
@@ -75,6 +75,7 @@ const Reserva = () => {
                 </section>
             </div>
             <form className='content__form' onSubmit={(e) => e.preventDefault()}>
+            <button type='button'><Link to={'/'}>Volvler al Login</Link></button>
                 <h2>Reservar un Servicio</h2>
                 <section className='content__form__inputs'>
                     <input
